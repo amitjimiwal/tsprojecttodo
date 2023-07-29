@@ -1,16 +1,17 @@
 import './App.css'
-import AddTodo from './components/AddTodo'
 import Header from './components/Header'
 import AddTodoContainer from './containers/AddTodoContainer'
 import TodoContainer from './containers/TodoContainer'
+import AppContext from './context/AppContext'
 
 function App() {
   return (
     <div className='mx-auto max-w-2xl p-4 bg-background h-screen'>
-      <Header/>
+<AppContext>
+<Header/>
       <AddTodoContainer/>
-        {/* <AddTodo/> */}
       <TodoContainer/>
+</AppContext>
     </div>
   )
 }

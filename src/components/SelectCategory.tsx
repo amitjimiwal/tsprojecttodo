@@ -1,9 +1,9 @@
 const SelectCategory = () => {
   return (
     <select className="rounded-xl p-2">
-         <option>All</option>
-         <option>Incomplete</option>
-         <option>Completed</option>
+         <option value="all">All</option>
+         <option value="incomplete">Incomplete</option>
+         <option value="complete">Completed</option>
     </select>
   )
 }

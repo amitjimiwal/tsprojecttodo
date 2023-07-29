@@ -1,10 +1,15 @@
 import AddTask from "./AddTask"
+import ButtonWrapper from "./ButtonWrapper"
 import Cancel from "./Cancel"
 import SelectCategory from "./SelectCategory"
 
 const AddTodo = () => {
   return (
-    <div className="bg-[#94ADD7] p-4 bg-opacity-40 rounded-xl flex flex-col gap-4">
+    <div>
+         <div>
+
+         </div>
+         <div className="bg-[#94ADD7] p-4 bg-opacity-40 rounded-xl flex flex-col gap-4">
       <div className="font-bold text-primary">
          Add Todo
       </div>
@@ -18,9 +23,12 @@ const AddTodo = () => {
       </div>    
       <div className="flex gap-4">
          <AddTask/>
-         <Cancel/>
+         <ButtonWrapper>
+                  <Cancel />
+         </ButtonWrapper>
       </div> 
     </div>
+</div>
   )
 }
 

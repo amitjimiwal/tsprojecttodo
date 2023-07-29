@@ -16,7 +16,6 @@ const AppContext: React.FC<Props> = ({ children }) => {
   function fetchtodo(type: string) {
     const storedTodos = localStorage.getItem('todos');
     const items = storedTodos ? JSON.parse(storedTodos) : [];
-    console.log("fetch me ", items)
     if (type === 'all') {
       settodos(items);
       return items;
@@ -40,7 +39,7 @@ const AppContext: React.FC<Props> = ({ children }) => {
     localStorage.setItem('todos', JSON.stringify(filteredtodo))
     settodos(filteredtodo);
   }
-  
+
   function updatetodo(id: string) {
     const storedTodos = localStorage.getItem('todos');
     const items = storedTodos ? JSON.parse(storedTodos) : [];

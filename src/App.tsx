@@ -6,7 +6,7 @@ import AppContext from './context/AppContext'
 
 function App() {
   return (
-    <div className='mx-auto max-w-2xl p-4 bg-background h-screen'>
+    <div className='mx-auto max-w-2xl p-4 bg-background min-h-screen'>
 <AppContext>
 <Header/>
       <AddTodoContainer/>

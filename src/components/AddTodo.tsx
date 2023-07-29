@@ -11,6 +11,10 @@ const AddTodo = () => {
    const [category, setcategory] = useState<string>('')
    const [title, settitle] = useState<string>('');
    const submit = () => {
+      if(!title){
+         alert('Enter Something')
+         return ;
+      }
      const unique_id = uuid();
      const small_id = unique_id.slice(0, 8)
      const todo: todo = {

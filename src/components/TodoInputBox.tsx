@@ -48,7 +48,7 @@ const TodoInputBox = ({toggle}:Props) => {
                <SelectInputCategory setcatagory={setcategory} />
             </div>
             <div className="flex gap-4">
-               <AddTaskButton submit={submit}/>
+               <AddTaskButton submit={submit} toggle={toggle}/>
                <ButtonWrapper toggle={toggle}>
                   <CancelButton />
                </ButtonWrapper>

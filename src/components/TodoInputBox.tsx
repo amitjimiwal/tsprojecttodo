@@ -13,6 +13,7 @@ const TodoInputBox = ({toggle}:Props) => {
    const { addTodo} = useContext(ConText)
    const [category, setcategory] = useState<string>('incompleted')
    const [title, settitle] = useState<string>('');
+   
    const submit = () => {
       if(!title){
          alert('Enter Something')
@@ -31,6 +32,13 @@ const TodoInputBox = ({toggle}:Props) => {
      addTodo(todo);
      settitle('')
    }
+   
+   const handlekeyPress=(e: React.KeyboardEvent<HTMLInputElement>)=>{
+      if(e.key=='Enter'){
+        submit()
+        toggle()
+      }
+    }
    return (
       <div className="bg-[#94ADD7] p-4 rounded-xl z-50 h-auto mb-4 ">
          <div className=" flex flex-col gap-4">
@@ -41,7 +49,7 @@ const TodoInputBox = ({toggle}:Props) => {
                <label htmlFor="title">Title</label>
                <input type="text" placeholder='Enter todo' className="p-2 outline-none" id="title" name="title" onChange={(e) => {
                   settitle(e.target.value)
-               }} value={title}/>
+               }} value={title} onKeyDown={handlekeyPress}/>
             </div>
             <div className="flex justify-between text-secondary">
                <h3>Status</h3>

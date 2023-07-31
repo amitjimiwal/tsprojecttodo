@@ -6,12 +6,17 @@ interface Props{
          currentTitle:string
 }
 const EditTodoComponent = ({handleUpdate,setCurrenttitle,currentTitle}:Props) => {
+  const handlekeyPress=(e: React.KeyboardEvent<HTMLInputElement>)=>{
+    if(e.key=='Enter'){
+      handleUpdate()
+    }
+  }
   return (
          <div className='flex justify-between w-full items-center'>
          <div>
            <input type="text" value={currentTitle} onChange={(e) => {
              setCurrenttitle(e.target.value)
-           }} className='bg-white bg-opacity-40 p-2 outline-none text-black ' />
+           }} className='bg-white bg-opacity-40 p-2 outline-none text-black ' onKeyDown={handlekeyPress}/>
          </div>
          <div>
            <ButtonWrapper>

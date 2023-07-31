@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { ConText } from '../context/AppContext';
 const TodoItem = ({ date, time, completed, title, id }: todoSchema) => {
   const { deletetodo, updatetodo } = useContext(ConText)
-  const postTime=`${new Date(time)}+${new Date(time)}`
   return (
     <div className='flex items-center gap-4 p-4 bg-[#94ADD7] bg-opacity-40 rounded-xl my-3'>
       <div className='outline-none' onClick={() => {

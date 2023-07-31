@@ -2,7 +2,7 @@ import { useState ,useContext} from "react"
 import AddTaskButton from "./AddTaskButton"
 import ButtonWrapper from "./ButtonWrapper"
 import CancelButton from "./CancelButton"
-import { todo } from "../interfaces/interface"
+import { todoSchema } from "../interfaces/interface"
 import SelectInputCategory from "./SelectInputCategory"
 import { ConText } from "../context/AppContext"
 import { v4 as uuid } from 'uuid';
@@ -20,13 +20,13 @@ const TodoInputBox = ({toggle}:Props) => {
       }
      const unique_id = uuid();
      const small_id = unique_id.slice(0, 8)
-     const todo: todo = {
+     const todo: todoSchema = {
        id: small_id,
        title,
        status: category,
        completed: category === 'completed' ? true : false,
-       date: `${new Date().getDate()}/${new Date().getMonth()}/${+new Date().getMonth()}`,
-       time: `${new Date().getTime()}`,
+       date: `${new Date().toLocaleDateString()}`,
+       time: `${new Date().toLocaleTimeString()}`,
      }
      addTodo(todo);
      settitle('')

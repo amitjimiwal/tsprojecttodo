@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { ConText } from "../context/AppContext"
 
-const SelectCategory = () => {
+const SelectFetchCategory = () => {
   const { settype } = useContext(ConText);
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     settype(e.target.value);
@@ -15,4 +15,4 @@ const SelectCategory = () => {
   )
 }
 
-export default SelectCategory
+export default SelectFetchCategory

@@ -4,7 +4,7 @@ export interface Props {
          children: React.ReactNode;
          toggle?:()=> void;
 }
-export interface todo{
+export interface todoSchema{
          id:string,
          title:string,
          time:string,
@@ -13,10 +13,10 @@ export interface todo{
          status?:string ,
          key?:number
 }
-export interface Contextinterface{
-         todos:todo[],
-         fetchtodo:(type: string) => void | todo[],
-         addTodo:(todo: todo) => void,
+export interface GlobalStateSchema{
+         todos:todoSchema[],
+         fetchtodo:(type: string) => void | todoSchema[],
+         addTodo:(todo: todoSchema) => void,
          deletetodo:(id: string) => void,
          settype:Dispatch<SetStateAction<string>>   ,
          updatetodo: (id:string)    => void

@@ -1,10 +1,11 @@
 import { BsFillTrashFill } from 'react-icons/bs';
 import ButtonWrapper from './ButtonWrapper';
-import { todo } from '../interfaces/interface';
+import { todoSchema } from '../interfaces/interface';
 import { useContext } from 'react';
 import { ConText } from '../context/AppContext';
-const Todo = ({ date, time, completed, title, id }: todo) => {
+const TodoItem = ({ date, time, completed, title, id }: todoSchema) => {
   const { deletetodo, updatetodo } = useContext(ConText)
+  const postTime=`${new Date(time)}+${new Date(time)}`
   return (
     <div className='flex items-center gap-4 p-4 bg-[#94ADD7] bg-opacity-40 rounded-xl my-3'>
       <div className='outline-none' onClick={() => {
@@ -32,4 +33,4 @@ const Todo = ({ date, time, completed, title, id }: todo) => {
   )
 }
 
-export default Todo
+export default TodoItem

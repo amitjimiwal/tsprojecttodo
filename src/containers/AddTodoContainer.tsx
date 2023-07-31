@@ -1,6 +1,6 @@
 import { useState } from "react"
 import TodoInputBox from "../components/TodoInputBox"
-import SelectCategory from "../components/SelectCategory"
+import SelectFetchCategory from "../components/SelectFetchCategory"
 import OpenTaskInputButton from "../components/OpenTaskInputButton"
 const AddTodoContainer = () => {
   const [openAddTask,setopenAddTask]=useState(false);
@@ -11,7 +11,7 @@ const AddTodoContainer = () => {
     <div>
       <div className='flex justify-between p-4'>
         <OpenTaskInputButton toggle={toggleaddTask} open={openAddTask}/>
-        <SelectCategory/>
+        <SelectFetchCategory/>
       </div>
       {openAddTask && <TodoInputBox toggle={toggleaddTask}/>}
     </div>

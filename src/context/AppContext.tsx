@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from "react"
-import { Props, todo, Contextinterface } from "../interfaces/interface";
-const initialTodos: todo[] = [];
-export const ConText = createContext<Contextinterface>({
+import { Props, todoSchema, GlobalStateSchema } from "../interfaces/interface";
+const initialTodos: todoSchema[] = [];
+export const ConText = createContext<GlobalStateSchema>({
   todos: initialTodos,
   fetchtodo: () => { },
   addTodo: () => { },
@@ -10,7 +10,7 @@ export const ConText = createContext<Contextinterface>({
   updatetodo: () => { },
 });
 const AppContext: React.FC<Props> = ({ children }) => {
-  const [todos, settodos] = useState<todo[]>([]);
+  const [todos, settodos] = useState<todoSchema[]>([]);
   const [type, settype] = useState("all");
 
   function fetchtodo(type: string) {
@@ -20,11 +20,11 @@ const AppContext: React.FC<Props> = ({ children }) => {
       settodos(items);
       return items;
     }
-    const filteredtodo = items.filter((item: todo) => item.status === type)
+    const filteredtodo = items.filter((item: todoSchema) => item.status === type)
     settodos(filteredtodo);
   }
 
-  function addTodo(todo: todo) {
+  function addTodo(todo: todoSchema) {
     const storedTodos = localStorage.getItem('todos');
     const items = storedTodos ? JSON.parse(storedTodos) : [];
     items.push(todo);
@@ -35,7 +35,7 @@ const AppContext: React.FC<Props> = ({ children }) => {
   function deletetodo(id: string) {
     const storedTodos = localStorage.getItem('todos');
     const items = storedTodos ? JSON.parse(storedTodos) : [];
-    const filteredtodo = items.filter((item: todo) => item.id !== id)
+    const filteredtodo = items.filter((item: todoSchema) => item.id !== id)
     localStorage.setItem('todos', JSON.stringify(filteredtodo))
     settodos(filteredtodo);
   }
@@ -43,7 +43,7 @@ const AppContext: React.FC<Props> = ({ children }) => {
   function updatetodo(id: string) {
     const storedTodos = localStorage.getItem('todos');
     const items = storedTodos ? JSON.parse(storedTodos) : [];
-    const filteredtodo = items.reduce((acc: todo[], curr: todo) => {
+    const filteredtodo = items.reduce((acc: todoSchema[], curr: todoSchema) => {
       if (curr.id === id) {
         curr.completed ?
           acc.push({ ...curr, completed: false, status: "incompleted" }) :

@@ -1,7 +1,7 @@
 import './App.css'
 import Header from './components/Header'
-import AddTodoContainer from './containers/AddTodoContainer'
-import TodoContainer from './containers/TodoContainer'
+import AddTodoContainer from './UI containers/AddTodoContainer'
+import TodoContainer from './UI containers/TodoContainer'
 import AppContext from './context/AppContext'
 
 function App() {

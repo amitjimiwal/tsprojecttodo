@@ -32,7 +32,7 @@ const TodoInputBox = ({toggle}:Props) => {
      settitle('')
    }
    return (
-      <div className="bg-[#94ADD7] p-4 rounded-xl z-50 w-full h-auto  mb-4">
+      <div className="bg-[#94ADD7] p-4 rounded-xl z-50 h-auto mb-4 ">
          <div className=" flex flex-col gap-4">
             <div className="font-bold text-primary">
                Add Todo

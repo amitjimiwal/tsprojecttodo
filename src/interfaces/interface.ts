@@ -19,5 +19,5 @@ export interface GlobalStateSchema{
          addTodo:(todo: todoSchema) => void,
          deletetodo:(id: string) => void,
          settype:Dispatch<SetStateAction<string>>   ,
-         updatetodo: (id:string)    => void
+         updatetodo: (id:string,data?:string)    => void
 }

@@ -9,7 +9,7 @@ const TodoContainer = () => {
   const { todos } = useContext(ConText)
   return (
     <div>
-
+      { /* check if ant todo exist */ }
       {todos.length>0 ?
         todos?.map((todo: todoSchema, index: number) => (
           <TodoItem key={index} title={todo.title} date={todo.date} time={todo.time} completed={todo.completed} id={todo.id} />

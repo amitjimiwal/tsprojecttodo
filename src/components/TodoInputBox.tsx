@@ -1,14 +1,17 @@
 import { useState ,useContext} from "react"
-import AddTask from "./AddTask"
+import AddTaskButton from "./AddTaskButton"
 import ButtonWrapper from "./ButtonWrapper"
-import Cancel from "./Cancel"
+import CancelButton from "./CancelButton"
 import { todo } from "../interfaces/interface"
 import SelectInputCategory from "./SelectInputCategory"
 import { ConText } from "../context/AppContext"
 import { v4 as uuid } from 'uuid';
-const AddTodo = () => {
+interface Props{
+   toggle:()=> void,
+}
+const TodoInputBox = ({toggle}:Props) => {
    const { addTodo} = useContext(ConText)
-   const [category, setcategory] = useState<string>('')
+   const [category, setcategory] = useState<string>('incompleted')
    const [title, settitle] = useState<string>('');
    const submit = () => {
       if(!title){
@@ -27,7 +30,6 @@ const AddTodo = () => {
      }
      addTodo(todo);
      settitle('')
-     setcategory('')
    }
    return (
       <div className="bg-[#94ADD7] p-4 rounded-xl z-50 w-full h-auto  mb-4">
@@ -46,9 +48,9 @@ const AddTodo = () => {
                <SelectInputCategory setcatagory={setcategory} />
             </div>
             <div className="flex gap-4">
-               <AddTask submit={submit}/>
-               <ButtonWrapper>
-                  <Cancel />
+               <AddTaskButton submit={submit}/>
+               <ButtonWrapper toggle={toggle}>
+                  <CancelButton />
                </ButtonWrapper>
             </div>
          </div>
@@ -56,4 +58,4 @@ const AddTodo = () => {
    )
 }
 
-export default AddTodo
+export default TodoInputBox

@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 export interface Props {
          children: React.ReactNode;
+         toggle?:()=> void;
 }
 export interface todo{
          id:string,

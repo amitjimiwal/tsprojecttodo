@@ -2,7 +2,7 @@ interface Props{
   toggle:()=> void,
   open:boolean
 }
-const OpenTodo = ({toggle,open}:Props) => {
+const OpenTaskInputButton= ({toggle,open}:Props) => {
   return (
     <button className="bg-heading p-2 rounded-xl text-white" onClick={() => {
       toggle()
@@ -10,4 +10,4 @@ const OpenTodo = ({toggle,open}:Props) => {
   )
 }
 
-export default OpenTodo
+export default OpenTaskInputButton

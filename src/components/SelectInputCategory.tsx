@@ -9,7 +9,7 @@ const SelectInputCategory = ({setcatagory}:Props) => {
     <div>
       <select className="rounded-xl p-2" onChange={(e)=>{
          setcatagory(e.target.value)
-      }}>
+      }} defaultValue="incompleted">
       <option value="incompleted">Incompleted</option>
       <option value="completed">Completed</option>
     </select>

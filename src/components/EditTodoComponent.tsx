@@ -1,11 +1,12 @@
 import { BsArrowDownRightCircleFill } from "react-icons/bs"
 import ButtonWrapper from "./ButtonWrapper"
+import React from "react";
 interface Props{
          handleUpdate:()=> void;
          setCurrenttitle:(i:string)=> void;
          currentTitle:string
 }
-const EditTodoComponent = ({handleUpdate,setCurrenttitle,currentTitle}:Props) => {
+const EditTodoComponent :React.FC<Props> = ({handleUpdate,setCurrenttitle,currentTitle}) => {
   const handlekeyPress=(e: React.KeyboardEvent<HTMLInputElement>)=>{
     if(e.key=='Enter'){
       handleUpdate()

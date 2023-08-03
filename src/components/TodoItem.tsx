@@ -1,10 +1,11 @@
+import React from 'react';
 import { BsFillPencilFill, BsFillTrashFill } from 'react-icons/bs';
 import ButtonWrapper from './ButtonWrapper';
 import { todoSchema } from '../interfaces/interface';
 import { useContext, useState } from 'react';
 import { ConText } from '../context/AppContext';
 import EditTodoComponent from './EditTodoComponent';
-const TodoItem = ({ date, time, completed, title, id }: todoSchema) => {
+const TodoItem: React.FC<todoSchema> = ({ date, time, completed, title, id }) => {
   const [editTodo, setEditTodo] = useState(false);
   const [currenttitle, setCurrenttitle] = useState(title);
   const { deletetodo, updatetodo } = useContext(ConText)

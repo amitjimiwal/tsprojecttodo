@@ -1,3 +1,4 @@
+import React from "react"
 import { useContext } from "react"
 import { ConText } from "../context/AppContext"
 import { todoSchema } from "../interfaces/interface"
@@ -5,7 +6,7 @@ import TodoItem from "../components/TodoItem"
 import ButtonWrapper from "../components/ButtonWrapper"
 import NoTodosButton from "../components/NoTodosButton"
 
-const TodoContainer = () => {
+const TodoContainer :React.FC = () => {
   const { todos } = useContext(ConText)
   return (
     <div>

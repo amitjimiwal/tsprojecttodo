@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { ConText } from "../context/AppContext"
 
-const SelectFetchCategory = () => {
+const SelectFetchCategory :React.FC= () => {
   const { settype } = useContext(ConText);
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     settype(e.target.value);

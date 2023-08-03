@@ -2,8 +2,8 @@ interface Props{
   submit: ()=>void;
   toggle:()=> void
 }
-
-const AddTaskButton = ({submit,toggle}:Props) => {
+import React from "react";
+const AddTaskButton :React.FC<Props>= ({submit,toggle}) => {
   return (
     <button className="bg-heading p-2 rounded-xl text-white" onClick={() => {submit()
       toggle()

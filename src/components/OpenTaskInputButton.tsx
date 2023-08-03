@@ -1,8 +1,9 @@
+import React from "react"
 interface Props{
   toggle:()=> void,
   open:boolean
 }
-const OpenTaskInputButton= ({toggle,open}:Props) => {
+const OpenTaskInputButton :React.FC<Props>= ({toggle,open}) => {
   return (
     <button className="bg-heading p-2 rounded-xl text-white" onClick={() => {
       toggle()

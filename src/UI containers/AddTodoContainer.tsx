@@ -1,8 +1,9 @@
 import { useState } from "react"
+import React from "react"
 import TodoInputBox from "../components/TodoInputBox"
 import SelectFetchCategory from "../components/SelectFetchCategory"
 import OpenTaskInputButton from "../components/OpenTaskInputButton"
-const AddTodoContainer = () => {
+const AddTodoContainer :React.FC= () => {
   const [openAddTask,setopenAddTask]=useState(false);
   const toggleaddTask=()=>{
     setopenAddTask(!openAddTask)

@@ -1,25 +1,24 @@
 import { useState ,useContext} from "react"
+import React from "react"
 import AddTaskButton from "./AddTaskButton"
 import ButtonWrapper from "./ButtonWrapper"
-import CancelButton from "./CancelButton"
 import { todoSchema } from "../interfaces/interface"
 import SelectInputCategory from "./SelectInputCategory"
 import { ConText } from "../context/AppContext"
-import { v4 as uuid } from 'uuid';
+import { v4  } from 'uuid';
 interface Props{
    toggle:()=> void,
 }
-const TodoInputBox = ({toggle}:Props) => {
+const TodoInputBox :React.FC<Props>= ({toggle}) => {
    const { addTodo} = useContext(ConText)
    const [category, setcategory] = useState<string>('incompleted')
    const [title, settitle] = useState<string>('');
-   
    const submit = () => {
       if(!title){
          alert('Enter Something')
          return ;
       }
-     const unique_id = uuid();
+     const unique_id = v4();
      const small_id = unique_id.slice(0, 8)
      const todo: todoSchema = {
        id: small_id,
@@ -32,7 +31,6 @@ const TodoInputBox = ({toggle}:Props) => {
      addTodo(todo);
      settitle('')
    }
-   
    const handlekeyPress=(e: React.KeyboardEvent<HTMLInputElement>)=>{
       if(e.key=='Enter'){
         submit()
@@ -58,7 +56,7 @@ const TodoInputBox = ({toggle}:Props) => {
             <div className="flex gap-4">
                <AddTaskButton submit={submit} toggle={toggle}/>
                <ButtonWrapper toggle={toggle}>
-                  <CancelButton />
+                  Cancel
                </ButtonWrapper>
             </div>
          </div>

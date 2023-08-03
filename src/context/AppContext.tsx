@@ -12,10 +12,10 @@ export const ConText = createContext<GlobalStateSchema>({
 const AppContext: React.FC<Props> = ({ children }) => {
   const [todos, settodos] = useState<todoSchema[]>([]);
   const [type, settype] = useState("all");
-
   function fetchtodo(type: string) {
     const storedTodos = localStorage.getItem('todos');
     const items = storedTodos ? JSON.parse(storedTodos) : [];
+    console.log(items)
     if (type === 'all') {
       settodos(items);
       return items;

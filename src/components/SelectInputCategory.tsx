@@ -9,7 +9,7 @@ const SelectInputCategory :React.FC<Props>= ({setcatagory}) => {
     <div>
       <select className="rounded-xl p-2" onChange={(e)=>{
          setcatagory(e.target.value)
-      }} defaultValue="incompleted">
+      }} defaultValue="incompleted" aria-label="selectinputcategory">
       <option value="incompleted">Incompleted</option>
       <option value="completed">Completed</option>
     </select>

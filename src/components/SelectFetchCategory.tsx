@@ -7,10 +7,10 @@ const SelectFetchCategory :React.FC= () => {
     settype(e.target.value);
   }
   return (
-    <select className="rounded-xl p-2" onChange={handleChange}>
-      <option value="all">All</option>
-      <option value="incompleted">Incompleted</option>
-      <option value="completed">Completed</option>
+    <select className="rounded-xl p-2" onChange={handleChange} aria-label="selectfetchcategory" defaultValue="all">
+      <option value="all" data-testid="selectfetchoption">All</option>
+      <option value="incompleted" data-testid="selectfetchoption">Incompleted</option>
+      <option value="completed" data-testid="selectfetchoption">Completed</option>
     </select>
   )
 }

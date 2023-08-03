@@ -4,7 +4,6 @@ import { ConText } from "../context/AppContext"
 import { todoSchema } from "../interfaces/interface"
 import TodoItem from "../components/TodoItem"
 import ButtonWrapper from "../components/ButtonWrapper"
-import NoTodosButton from "../components/NoTodosButton"
 
 const TodoContainer :React.FC = () => {
   const { todos } = useContext(ConText)
@@ -17,7 +16,7 @@ const TodoContainer :React.FC = () => {
         )) :
         <div className="flex items-center justify-center gap-4 p-4 bg-[#94ADD7] bg-opacity-40 rounded-xl my-3">
           <ButtonWrapper>
-            <NoTodosButton />
+            No Todos
           </ButtonWrapper>
         </div>}
     </div>

@@ -17,13 +17,13 @@ const EditTodoComponent :React.FC<Props> = ({handleUpdate,setCurrenttitle,curren
          <div>
            <input type="text" value={currentTitle} onChange={(e) => {
              setCurrenttitle(e.target.value)
-           }} className='bg-white bg-opacity-40 p-2 outline-none text-black ' onKeyDown={handlekeyPress}/>
+           }} className='bg-white bg-opacity-40 p-2 outline-none text-black ' onKeyDown={handlekeyPress} aria-label="edit-todo"/>
          </div>
          <div>
            <ButtonWrapper>
              <BsArrowDownRightCircleFill onClick={() => {
              handleUpdate()
-             }}/>
+             }} data-testid="callupdate"/>
            </ButtonWrapper>
          </div>
        </div>

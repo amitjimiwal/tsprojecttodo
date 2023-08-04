@@ -5,7 +5,7 @@ describe(OpenTaskInputButton, () => {
   it("renders button with Add task text",()=>{
        const toggle=jest.fn();
        render(<OpenTaskInputButton toggle={toggle} open={false}/>)
-       const button=screen.getByRole('button',{name:'Add Task'})
+       const button=screen.getByRole('button',{name:'Add Work'})
        expect(button).toBeInTheDocument();
   })
   it("renders button with Close text",()=>{

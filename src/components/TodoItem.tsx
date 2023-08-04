@@ -23,7 +23,7 @@ const TodoItem: React.FC<todoSchema> = ({ date, time, completed, title, id }) =>
           <div className='outline-none' onClick={() => {
             updatetodo(id)
           }}>
-            <input type="checkbox" className='checkboxstyle' checked={completed} onChange={() => { }} />
+            <input type="checkbox" className='checkboxstyle' checked={completed} onChange={() => { }} data-testid="istaskcompleted"/>
           </div>
           <div>
             <h3 className='tracking-wide'>{completed ? <s>{title}</s> : <>{title}</>} </h3>
@@ -33,10 +33,10 @@ const TodoItem: React.FC<todoSchema> = ({ date, time, completed, title, id }) =>
             <ButtonWrapper>
               <BsFillTrashFill onClick={() => {
                 deletetodo(id)
-              }} />
+              }} data-testid="deletebutton"/>
             </ButtonWrapper>
             <ButtonWrapper>
-              <BsFillPencilFill onClick={() => { setEditTodo(!editTodo) }} />
+              <BsFillPencilFill onClick={() => { setEditTodo(!editTodo) }} data-testid="edittodobutton" />
             </ButtonWrapper>
           </div>
         </>

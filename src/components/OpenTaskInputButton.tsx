@@ -7,7 +7,7 @@ const OpenTaskInputButton :React.FC<Props>= ({toggle,open}) => {
   return (
     <button className="bg-heading p-2 rounded-xl text-white" onClick={() => {
       toggle()
-    }}>{open ? 'Close' : 'Add Task'}</button>
+    }}>{open ? 'Close' : 'Add Work'}</button>
   )
 }
 

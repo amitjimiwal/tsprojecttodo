@@ -44,7 +44,7 @@ npm run build
 5. Start the application:
 
 ```bash
-npm start
+npm run dev
 ```
 
 The application will now be running on your local machine at http://localhost:3000.

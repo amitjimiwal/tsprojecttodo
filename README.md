@@ -79,6 +79,34 @@ git push origin feature/your-feature-name
 
 We appreciate your contributions, and together, we can make the Project To-Do List Manager even better!
 
+## Test Cases
+
+The todo-tsproject comes with a comprehensive set of test cases to ensure the correctness and reliability of the application. The test cases are implemented using [Jest](https://jestjs.io/), a popular JavaScript testing framework.
+
+To run the tests locally, make sure you have completed the installation steps mentioned in the **Getting Started** section.
+
+### Running Tests
+
+1. Navigate to the root of the project where the `package.json` file is located.
+
+2. Run the following command to execute the tests:
+
+   ```bash
+   npm test
+   ```
+
+   Jest will then run the test suite and display the results in your terminal.
+
+### Writing Tests
+
+If you want to contribute to this project or add more test cases, you can find the test files in the `__tests__` folder located at the root of the project.
+
+The test files are organized in a way that each functionality of the calculator has its own separate test file. For example:
+
+- `yourfunctionality.test.ts`: Contains test cases for the your functionality.
+
+Feel free to add more test cases to ensure full test coverage and verify the edge cases.
+
 ## License
 
 The Project To-Do List Manager is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute the software as per the terms of the license.

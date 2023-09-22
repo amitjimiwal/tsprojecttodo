@@ -30,13 +30,11 @@ const TodoItem: React.FC<todoSchema> = ({ date, time, completed, title, id }) =>
             <p className='text-gray-700'>{date}, {time}</p>
           </div>
           <div className='ml-auto flex gap-3 text-xl'>
-            <ButtonWrapper>
-              <BsFillTrashFill onClick={() => {
-                deletetodo(id)
-              }} data-testid="deletebutton"/>
+            <ButtonWrapper toggle={() => deletetodo(id)}>
+              <BsFillTrashFill data-testid="deletebutton"/>
             </ButtonWrapper>
-            <ButtonWrapper>
-              <BsFillPencilFill onClick={() => { setEditTodo(!editTodo) }} data-testid="edittodobutton" />
+            <ButtonWrapper toggle={() => setEditTodo(!editTodo)}>
+              <BsFillPencilFill data-testid="edittodobutton" />
             </ButtonWrapper>
           </div>
         </>

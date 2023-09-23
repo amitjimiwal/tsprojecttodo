@@ -20,10 +20,8 @@ const EditTodoComponent :React.FC<Props> = ({handleUpdate,setCurrenttitle,curren
            }} className='bg-white bg-opacity-40 p-2 outline-none text-black ' onKeyDown={handlekeyPress} aria-label="edit-todo"/>
          </div>
          <div>
-           <ButtonWrapper>
-             <BsArrowDownRightCircleFill onClick={() => {
-             handleUpdate()
-             }} data-testid="callupdate"/>
+           <ButtonWrapper toggle={handleUpdate}>
+             <BsArrowDownRightCircleFill data-testid="callupdate"/>
            </ButtonWrapper>
          </div>
        </div>
